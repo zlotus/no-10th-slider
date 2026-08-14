@@ -21,6 +21,11 @@ import { Slide20 } from '../slides/Slide20'
 import { Slide21 } from '../slides/Slide21'
 import { Slide22 } from '../slides/Slide22'
 import { Slide23 } from '../slides/Slide23'
+import { Slide24 } from '../slides/Slide24'
+import { Slide25 } from '../slides/Slide25'
+import { Slide26 } from '../slides/Slide26'
+import { Slide27 } from '../slides/Slide27'
+import { Slide28 } from '../slides/Slide28'
 import type { SlideDefinition } from './types'
 
 export const slides: SlideDefinition[] = [
@@ -47,4 +52,9 @@ export const slides: SlideDefinition[] = [
   { number: 21, title: 'Hooks：有些事不能靠 Agent 自觉', maxStep: 4, component: Slide21 },
   { number: 22, title: 'Subagent：给子任务一张干净工作台', maxStep: 4, component: Slide22 },
   { number: 23, title: '从 Agent 到 Agent Team', maxStep: 4, component: Slide23 },
+  { number: 24, title: 'Agent 会犯错，而且错误也会进入 Loop', maxStep: 5, component: Slide24 },
+  { number: 25, title: 'Context Window：工作台放不下了', maxStep: 5, component: Slide25 },
+  { number: 26, title: 'Compact，还是 New Session？', maxStep: 5, component: Slide26 },
+  { number: 27, title: '“AI 自己干了半小时”，底下究竟发生了什么？', maxStep: 9, component: Slide27 },
+  { number: 28, title: '人的角色也变了', maxStep: 3, component: Slide28 },
 ]

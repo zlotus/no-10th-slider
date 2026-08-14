@@ -1,6 +1,7 @@
-import { ArrowRight, BookOpenCheck, CheckCircle2, FileText, Sparkles } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react'
 import { CapabilityRail } from '../components/CapabilityRail'
 import { ContextPanel, type ContextItem } from '../components/ContextPanel'
+import { HandoffDocument } from '../components/HandoffDocument'
 import { Slide } from '../components/Slide'
 import type { SlideProps } from '../presentation/types'
 
@@ -19,8 +20,6 @@ const sessionB: ContextItem[] = [
   { label: 'Next Steps', detail: '测试 → 文档 → Review', kind: 'code' },
 ]
 
-const fields = ['Goal', 'Current Progress', 'Key Decisions', 'Important Files', 'Known Problems', 'Next Steps']
-
 export function Slide19({ step }: SlideProps) {
   return <Slide number="19" eyebrow="REAL CASE · CONTEXT CONTINUITY" title="真实案例：project-continuity" className="slide-19">
     <div className="continuity-stage">
@@ -33,11 +32,7 @@ export function Slide19({ step }: SlideProps) {
 
       <section className="handoff-column">
         <div className={`continuity-skill ${step >= 1 ? 'active' : ''}`}><Sparkles /><div><span>SKILL</span><b>project-continuity</b></div></div>
-        <div className={`handoff-document ${step >= 2 ? 'visible' : ''}`}>
-          <header><BookOpenCheck /><div><span>STRUCTURED HANDOFF</span><b>Repository-owned state</b></div></header>
-          <div>{fields.map((field, index) => <p key={field} className={step >= 2 ? 'visible' : ''} style={{ transitionDelay: `${index * 35}ms` }}><CheckCircle2 />{field}</p>)}</div>
-          <footer><FileText />progress.md <i /> decisions.md <i /> handoff.md</footer>
-        </div>
+        <HandoffDocument visible={step >= 2} />
         <div className={`handoff-transfer ${step >= 4 ? 'active' : ''}`}><span>版本化项目状态</span><ArrowRight /></div>
       </section>
 

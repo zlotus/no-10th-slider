@@ -2,11 +2,11 @@
 
 ## 当前目标
 
-Phase 4 已实现完成并通过用户 Review。实现基线 `623abdb` 已同步到 `origin/main`，下一阶段为 Phase 5。
+Phase 1–5 均已完成并通过用户 Review，完整 Slide 01–28 已进入正式使用前验收。本次 Phase 5 里程碑提交包含最终五页、共享组件扩展与项目状态文档。
 
 ## 当前实现状态
 
-Slide Registry 已连续覆盖 01–23。Slide 17–23 在既有 Agent System 上依次加入 Instructions、Skills、project-continuity、MCP、Hooks、Subagents 与 Agent Teams。新增 `CapabilityRail` 与 `AgentUnit`；Slide 19 的跨 Session 连续性、Slide 20 的 MCP Tool 接入、Slide 21 的强制层边界、Slide 22/23 的 Context Isolation 与结果协调均由 Step 派生，可通过 Hash、前进与回退确定还原。Phase 4 基线提交为 `623abdb`。
+Slide Registry 已连续覆盖 01–28。Slide 24 展示反馈循环的风险，Slide 25/26 展示 Context 增长、Compact 的有损性以及 Structured Handoff / Clean Context 的任务连续性，Slide 27 复用既有视觉语义组装完整 Agent System，Slide 28 完成人的职责收束。`HandoffDocument` 已从 Slide 19 抽为共享组件，`ContextPanel` 已扩展但保持既有默认表现。全部新增动画由 Step 派生，可通过 Hash、前进和回退确定还原。`typecheck`、`lint`、production build、01–28 最终截图回归及浏览器键盘/全屏检查均已通过。
 
 ## 关键文件
 
@@ -18,6 +18,7 @@ Slide Registry 已连续覆盖 01–23。Slide 17–23 在既有 Agent System �
 - `src/components/StoryRail.tsx`
 - `src/components/Terminal.tsx`
 - `src/components/ContextPanel.tsx`
+- `src/components/HandoffDocument.tsx`
 - `src/components/AgentLoop.tsx`
 - `src/components/CapabilityRail.tsx`
 - `src/components/AgentUnit.tsx`
@@ -31,13 +32,20 @@ Slide Registry 已连续覆盖 01–23。Slide 17–23 在既有 Agent System �
 - `src/slides/Slide21.tsx`
 - `src/slides/Slide22.tsx`
 - `src/slides/Slide23.tsx`
+- `src/slides/Slide24.tsx`
+- `src/slides/Slide25.tsx`
+- `src/slides/Slide26.tsx`
+- `src/slides/Slide27.tsx`
+- `src/slides/Slide28.tsx`
+- `src/presentation/slides.ts`
 
 ## 未解决问题
 
-- 最终演示电脑的中文字体与投影字号仍需在后续整体验收时复核。
+- 最终演示电脑的中文字体、投影字号、浏览器全屏行为与底部安全区仍需人工复核。
+- 约 30 分钟的整场演讲节奏尚需用真实讲稿和彩排确认。
 
 ## 下一步
 
-1. 阅读 `specs.md` 中的 Phase 5 与 Slide 24–28 规格，并检查相关参考资料。
-2. 先 Explore / Plan，明确最后五页与 Slide 17–23、Slide 05/19 的叙事衔接和共享组件复用。
-3. 实现 Phase 5 后完成 Slide 01–28 全量回归与最终演示验收。
+1. 在正式演示设备上以浏览器 100% 缩放进入全屏，检查中文字体、投影对比度、控制条与 1920×1080 安全区。
+2. 完整彩排 Slide 01–28，确认总时长、页面停留时间与 Step 节奏。
+3. 仅处理设备检查或彩排发现的必要问题，不再扩大功能范围。

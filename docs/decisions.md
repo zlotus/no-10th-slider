@@ -3,7 +3,7 @@
 ## Presentation Runtime
 
 - 逻辑舞台固定为 1920×1080，Runtime 只对整个舞台做统一 `transform: scale()`。
-- Slide 由注册表描述真实编号、标题、组件与 `maxStep`；Phase 4 后连续注册 Slide 01–23。
+- Slide 由注册表描述真实编号、标题、组件与 `maxStep`；最终连续注册 Slide 01–28。
 - URL 使用 `#/slide/step`。所有 Step 视觉状态由整数派生，不保存动画副作用，以保证前进与回退一致。
 - Space、Right、PageDown 优先推进 Step，再翻页；Left、PageUp 优先回退 Step，再翻页；Home/End/F 遵循演示快捷键约定。
 
@@ -43,6 +43,15 @@
 - MCP 作为 Harness 的标准化外部 Tool 接入层，新增 Tool 来源但不改变 `tool_use` → 执行 → `tool_result` → Context → Model 的循环。
 - `AgentUnit` 为 Subagent 与 Agent Team 提供统一视觉身份；Subagent 使用独立 `messages[]` 与 Agent Loop，仅把结果摘要返回父 Context，不把 Context Isolation 误画成文件系统隔离。
 - Agent Team 使用 Lead、独立成员 Context、共享任务状态与消息/结果传递表达协调；避免拟人化“多个 AI 开会”。
+
+## 最终收束与 Context Management
+
+- Slide 24 继续使用既有 `AgentLoop`，只切换为风险语义色；反馈循环既能修正错误，也能让错误 Observation 驱动下一轮，因此能力边界与结果验证必须在系统层明确。
+- Compact 在活跃 Context 中是有损的：它保留当前目标、状态与关键决策以延续对话，但原始日志、精确措辞和中间过程可能退出当前工作台。外部保存完整 transcript 不等于 Model 当前仍能访问全部历史。
+- Structured Handoff 保存仓库拥有的目标、进度、决策、问题和下一步，让 Clean Context 的新 Session 保留任务连续性；它不复制完整聊天。`HandoffDocument` 是 Slide 19/26 共用的视觉语义。
+- `ContextPanel` 继续作为 Slide 05/19/25/26 的统一 Context 容器，并通过 meter 状态和条目弱化表达增长、告警与 Compact，不另建一套 Context 视觉。
+- Slide 27 不创建新的最终架构：它复用前文所有稳定节点和颜色语义，将 Model、Context、Tools、Harness、Permissions 与 Loop 作为核心系统，把 Instructions、Skills、Hooks、MCP、Subagents、Context Management 作为工程能力接入。
+- Slide 28 不再扩展技术栈，以人的职责完成 Closing：定义目标、提供上下文、设置边界、授予工具、观察执行、判断结果。
 
 ## 依赖边界
 
