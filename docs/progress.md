@@ -2,7 +2,7 @@
 
 ## 当前里程碑
 
-Phase 4 Agent System 工程能力扩展已完成，等待用户视觉与交互 Review。
+Phase 4 Agent System 工程能力扩展已完成并通过用户 Review。当前没有进行中的实现，等待进入 Phase 5。
 
 ## 已实现
 
@@ -35,9 +35,9 @@ Phase 4 Agent System 工程能力扩展已完成，等待用户视觉与交互 R
 
 ## 下一步
 
-1. 等待用户 Review Phase 4；不要提前进入 Phase 5。
-2. 重点确认 Slide 19 的 Session Handoff、Slide 21 的软约束/强制执行区别，以及 Slide 22–23 的隔离与协调关系。
-3. Review 通过后，再按 `specs.md` 进入 Phase 5（Slide 24–28）。
+1. 按 `specs.md` 规划 Phase 5（Slide 24–28），开始前继续复用已稳定的 Runtime、Design System 与共享组件。
+2. Phase 5 实现前核实 Agent 的限制、Context Management 与最终系统总结所需参考资料。
+3. 完成最后一批页面后进行 01–28 全量叙事、Step Reverse、投影可读性与构建验收。
 
 ## 待确认
 
