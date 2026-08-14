@@ -48,7 +48,7 @@ pnpm preview
 
 - `Space`、`Right Arrow`、`PageDown`：推进页内 Step；当前页结束后进入下一页
 - `Left Arrow`、`PageUp`：回退页内 Step；回到起点后进入上一页
-- `Home` / `End`：跳到第一张或最后一张原型页
+- `Home` / `End`：跳到第一张或最后一张页面
 - `F`：进入或退出全屏
 
-当前 Phase 1 已实现 Slide 01、03、07、10，并已通过原型 Review。后续开发从 Phase 2 开始。
+当前 Phase 1 与 Phase 2 已完成并通过 Review，Slide Registry 已连续覆盖 Slide 01–10。后续开发从 Phase 3 开始。

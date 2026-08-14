@@ -13,9 +13,9 @@ export function Presentation() {
       <Stage><CurrentSlide step={runtime.step} /></Stage>
       <nav className="runtime-controls" aria-label="演示控制">
         <button onClick={runtime.backward} aria-label="上一步"><ChevronLeft /></button>
-        <button className="page-indicator" onClick={() => runtime.go((runtime.index + 1) % slides.length)} title="点击跳到下一张原型页">
+        <button className="page-indicator" onClick={() => runtime.go((runtime.index + 1) % slides.length)} title="点击跳到下一页">
           <span>{String(runtime.index + 1).padStart(2, '0')}</span><i>/</i><span>{String(slides.length).padStart(2, '0')}</span>
-          <small>原型页 · Slide {String(runtime.current.number).padStart(2, '0')}</small>
+          <small>Slide {String(runtime.current.number).padStart(2, '0')}</small>
         </button>
         <button onClick={runtime.forward} aria-label="下一步"><ChevronRight /></button>
         <button onClick={() => void runtime.toggleFullscreen()} aria-label="切换全屏">

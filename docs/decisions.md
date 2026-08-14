@@ -3,7 +3,7 @@
 ## Presentation Runtime
 
 - 逻辑舞台固定为 1920×1080，Runtime 只对整个舞台做统一 `transform: scale()`。
-- Slide 由注册表描述真实编号、标题、组件与 `maxStep`；当前只注册 Phase 1 的 01/03/07/10。
+- Slide 由注册表描述真实编号、标题、组件与 `maxStep`；Phase 2 后连续注册 Slide 01–10。
 - URL 使用 `#/slide/step`。所有 Step 视觉状态由整数派生，不保存动画副作用，以保证前进与回退一致。
 - Space、Right、PageDown 优先推进 Step，再翻页；Left、PageUp 优先回退 Step，再翻页；Home/End/F 遵循演示快捷键约定。
 
@@ -18,6 +18,13 @@
 
 - Claude 风格流程以 `tool_use`、`stop_reason: "tool_use"`、handler dispatch、真实工具执行、带 `tool_use_id` 的 `tool_result`、写回 messages、再次调用 Model 表达。
 - Model 与真实环境之间保留明确边界；Shell 命令位于 Harness 的 Bash handler 内，绝不表现为 LLM 自己执行。
+
+## 基础概念组件
+
+- `ContextPanel` 是 Context 的长期视觉容器，项目规则、目标、代码、Tool Result 与对话作为可填充条目；后续增长、Compact 与 Handoff 页面应扩展该组件，而不是重画 Context。
+- `CodeBlock` 负责静态代码和逐行讲解，不引入运行时高亮依赖。
+- `AgentLoop` 表达协议与运行时数据流；Slide 08 展示程序机制，Slide 09 使用独立的大圆环表达 Reason → Act → Observe → Repeat，避免两页重复。
+- Phase 2 不增加依赖，继续使用 Step 派生状态与已有颜色语义。
 
 ## 依赖边界
 
