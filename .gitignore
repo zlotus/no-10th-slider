@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.vite/
+
+# 只读参考仓库，不纳入本项目版本管理
+Claude-Code-Everything-You-Need-to-Know/
+Claude-Code-Everything-You-Need-to-Know-Zh-cn/
+learn-claude-code/
+my-skills/
