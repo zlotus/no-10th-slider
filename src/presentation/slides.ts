@@ -14,6 +14,13 @@ import { Slide13 } from '../slides/Slide13'
 import { Slide14 } from '../slides/Slide14'
 import { Slide15 } from '../slides/Slide15'
 import { Slide16 } from '../slides/Slide16'
+import { Slide17 } from '../slides/Slide17'
+import { Slide18 } from '../slides/Slide18'
+import { Slide19 } from '../slides/Slide19'
+import { Slide20 } from '../slides/Slide20'
+import { Slide21 } from '../slides/Slide21'
+import { Slide22 } from '../slides/Slide22'
+import { Slide23 } from '../slides/Slide23'
 import type { SlideDefinition } from './types'
 
 export const slides: SlideDefinition[] = [
@@ -33,4 +40,11 @@ export const slides: SlideDefinition[] = [
   { number: 14, title: 'Code：Agent 开始改变真实环境', maxStep: 3, component: Slide14 },
   { number: 15, title: '测试失败，其实只是新的 Observation', maxStep: 8, component: Slide15 },
   { number: 16, title: 'Explore → Plan → Code → Test → Commit', maxStep: 5, component: Slide16 },
+  { number: 17, title: 'Instructions：这个项目有什么规矩？', maxStep: 3, component: Slide17 },
+  { number: 18, title: 'Skills：把经验封装成能力', maxStep: 4, component: Slide18 },
+  { number: 19, title: '真实案例：project-continuity', maxStep: 5, component: Slide19 },
+  { number: 20, title: 'MCP：给 Agent 接上外部世界', maxStep: 4, component: Slide20 },
+  { number: 21, title: 'Hooks：有些事不能靠 Agent 自觉', maxStep: 4, component: Slide21 },
+  { number: 22, title: 'Subagent：给子任务一张干净工作台', maxStep: 4, component: Slide22 },
+  { number: 23, title: '从 Agent 到 Agent Team', maxStep: 4, component: Slide23 },
 ]

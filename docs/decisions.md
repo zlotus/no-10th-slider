@@ -3,7 +3,7 @@
 ## Presentation Runtime
 
 - 逻辑舞台固定为 1920×1080，Runtime 只对整个舞台做统一 `transform: scale()`。
-- Slide 由注册表描述真实编号、标题、组件与 `maxStep`；Phase 3 后连续注册 Slide 01–16。
+- Slide 由注册表描述真实编号、标题、组件与 `maxStep`；Phase 4 后连续注册 Slide 01–23。
 - URL 使用 `#/slide/step`。所有 Step 视觉状态由整数派生，不保存动画副作用，以保证前进与回退一致。
 - Space、Right、PageDown 优先推进 Step，再翻页；Left、PageUp 优先回退 Step，再翻页；Home/End/F 遵循演示快捷键约定。
 
@@ -33,6 +33,16 @@
 - `ToolUseCard`、`ToolResultCard` 与 `Terminal` 通过可选 props 承载不同工具和结果，默认值保持 Slide 07 的原始 `npm test` 示例不变。
 - Slide 15 的关键元素使用常驻 DOM + step 可见状态，确保 Hash 直达、正向与反向都能确定还原；失败是 `tool_result` Observation，不是 Model 自己执行测试。
 - Slide 16 明确分层：Workflow 是上层任务过程，`AgentLoop` 是每个阶段共用的底层运行机制。
+
+## Agent System 工程能力
+
+- Slide 17–23 不是七套孤立能力，而是沿用 Model、Context、Harness、Tools、Agent Loop 的既有系统边界逐层扩展；`CapabilityRail` 只承担累积导航，不替代页面主体解释。
+- Instructions 作为项目规则进入 Context，影响 Model 判断但不承担强制执行；Hooks、Permissions 与 Host Code 位于 Harness 生命周期，负责确定性拦截或执行。
+- Skills 使用“轻量目录元数据 + 按需加载完整 `SKILL.md`”表达，避免暗示所有 Skill 正文始终占用 Context。
+- project-continuity 的交接对象是版本化仓库中的结构化项目状态，而不是整段聊天历史；新 Session 从 Clean Context 开始，只读取继续任务所需状态。
+- MCP 作为 Harness 的标准化外部 Tool 接入层，新增 Tool 来源但不改变 `tool_use` → 执行 → `tool_result` → Context → Model 的循环。
+- `AgentUnit` 为 Subagent 与 Agent Team 提供统一视觉身份；Subagent 使用独立 `messages[]` 与 Agent Loop，仅把结果摘要返回父 Context，不把 Context Isolation 误画成文件系统隔离。
+- Agent Team 使用 Lead、独立成员 Context、共享任务状态与消息/结果传递表达协调；避免拟人化“多个 AI 开会”。
 
 ## 依赖边界
 
