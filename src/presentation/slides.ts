@@ -8,6 +8,12 @@ import { Slide07 } from '../slides/Slide07'
 import { Slide08 } from '../slides/Slide08'
 import { Slide09 } from '../slides/Slide09'
 import { Slide10 } from '../slides/Slide10'
+import { Slide11 } from '../slides/Slide11'
+import { Slide12 } from '../slides/Slide12'
+import { Slide13 } from '../slides/Slide13'
+import { Slide14 } from '../slides/Slide14'
+import { Slide15 } from '../slides/Slide15'
+import { Slide16 } from '../slides/Slide16'
 import type { SlideDefinition } from './types'
 
 export const slides: SlideDefinition[] = [
@@ -21,4 +27,10 @@ export const slides: SlideDefinition[] = [
   { number: 8, title: '真正让 Agent 跑起来的，是一个 Loop', maxStep: 4, component: Slide08 },
   { number: 9, title: 'Agent Loop：Reason → Act → Observe → Repeat', maxStep: 4, component: Slide09 },
   { number: 10, title: '一个完整 Coding Agent', maxStep: 4, component: Slide10 },
+  { number: 11, title: '任务：给现有项目增加登录功能', maxStep: 1, component: Slide11 },
+  { number: 12, title: '第一件事：Explore', maxStep: 4, component: Slide12 },
+  { number: 13, title: 'Plan：把目标变成可执行步骤', maxStep: 3, component: Slide13 },
+  { number: 14, title: 'Code：Agent 开始改变真实环境', maxStep: 3, component: Slide14 },
+  { number: 15, title: '测试失败，其实只是新的 Observation', maxStep: 8, component: Slide15 },
+  { number: 16, title: 'Explore → Plan → Code → Test → Commit', maxStep: 5, component: Slide16 },
 ]

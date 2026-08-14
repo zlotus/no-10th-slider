@@ -51,4 +51,4 @@ pnpm preview
 - `Home` / `End`：跳到第一张或最后一张页面
 - `F`：进入或退出全屏
 
-当前 Phase 1 与 Phase 2 已完成并通过 Review，Slide Registry 已连续覆盖 Slide 01–10。后续开发从 Phase 3 开始。
+当前 Phase 1 与 Phase 2 已通过 Review，Phase 3 已完成并等待 Review；Slide Registry 已连续覆盖 Slide 01–16。

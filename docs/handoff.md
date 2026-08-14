@@ -2,11 +2,11 @@
 
 ## 当前目标
 
-Phase 2 已完成并通过用户 Review。下一阶段是 Phase 3。
+Phase 3 已实现完成，当前等待用户 Review；在确认前不要进入 Phase 4。
 
 ## 当前实现状态
 
-Slide Registry 已连续覆盖 01–10。新增 Slide 02/04/05/06/08/09，以及共享 `ContextPanel`、`CodeBlock`、`AgentLoop`。新增页关键状态和 Phase 1 四张原型页均已完成 Chromium 回归检查，用户已确认 Phase 2 效果。
+Slide Registry 已连续覆盖 01–16。Slide 11–16 使用同一个登录功能任务构成需求 → Explore → Plan → Code → Test/Fix → Commit 的连续故事。新增 `StoryRail`，并扩展 Tool packet 与 Terminal 的内容参数；Slide 15 的 9 个状态可通过 Hash、前进与回退确定还原。
 
 ## 关键文件
 
@@ -15,11 +15,14 @@ Slide Registry 已连续覆盖 01–10。新增 Slide 02/04/05/06/08/09，以及
 - `src/styles/global.css`
 - `src/components/Nodes.tsx`
 - `src/components/Packets.tsx`
+- `src/components/StoryRail.tsx`
+- `src/components/Terminal.tsx`
 - `src/components/ContextPanel.tsx`
 - `src/components/AgentLoop.tsx`
 - `src/slides/Slide07.tsx`
-- `src/slides/Slide08.tsx`
-- `src/slides/Slide09.tsx`
+- `src/slides/Slide12.tsx`
+- `src/slides/Slide15.tsx`
+- `src/slides/Slide16.tsx`
 
 ## 未解决问题
 
@@ -27,6 +30,6 @@ Slide Registry 已连续覆盖 01–10。新增 Slide 02/04/05/06/08/09，以及
 
 ## 下一步
 
-1. 阅读 `specs.md` 的 Slide 11–16 规格和对应参考资料。
-2. 规划跨六页连续使用的登录功能案例与共享视觉元素。
-3. 完成 Phase 3 后运行验证与视觉回归，再停下等待 Review。
+1. Review Slide 11–16 的整体叙事节奏与投影可读性。
+2. 逐步检查 Slide 12 step 1–4、Slide 15 step 0–8 和 Slide 16 step 0–5，并测试反向回退。
+3. 用户确认 Phase 3 后再进入 Phase 4；不要提前实现 Slide 17 或之后页面。
