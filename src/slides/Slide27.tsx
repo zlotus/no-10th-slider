@@ -18,7 +18,7 @@ const roles = [
 ] as const
 
 export function Slide27({ step }: SlideProps) {
-  return <Slide number="27" eyebrow="FINAL SYSTEM · HERO" title={'“AI 自己干了半小时”，底下究竟发生了什么？'} className="slide-27">
+  return <Slide number="27" eyebrow="SYSTEM VIEW · SYNTHESIS" title={'“AI 自己干了半小时”，底下究竟发生了什么？'} className="slide-27">
     <div className="final-system-stage">
       <div className="final-user-goal"><CircleUserRound /><span>HUMAN GOAL</span><b>帮我实现登录功能</b><i>↓</i></div>
 

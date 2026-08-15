@@ -31,8 +31,8 @@ export function Slide14({ step }: SlideProps) {
         <header><Shield />操作风险</header>
         <div className="risk-scale"><i /><i /><i /><i /></div>
         <ol>
-          <li className={step >= 1 ? 'active' : ''}><Eye /><span>Read</span><small>低风险</small></li>
-          <li className={step >= 2 ? 'active' : ''}><FileEdit /><span>Edit</span><small>改变文件</small></li>
+          <li className={step >= 1 ? 'active' : ''}><Eye /><span>Read</span><small>只读：低风险</small></li>
+          <li className={step >= 2 ? 'active' : ''}><FileEdit /><span>Edit</span><small>改变文件：中风险</small></li>
           <li><TerminalSquare /><span>Execute</span><small>运行程序</small></li>
           <li><AlertTriangle /><span>Destructive</span><small>高风险</small></li>
         </ol>

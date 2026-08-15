@@ -44,7 +44,7 @@ export const slides: SlideDefinition[] = [
   { number: 13, title: 'Plan：把目标变成可执行步骤', maxStep: 3, component: Slide13 },
   { number: 14, title: 'Code：Agent 开始改变真实环境', maxStep: 3, component: Slide14 },
   { number: 15, title: '测试失败，其实只是新的 Observation', maxStep: 8, component: Slide15 },
-  { number: 16, title: 'Explore → Plan → Code → Test → Commit', maxStep: 5, component: Slide16 },
+  { number: 16, title: 'Explore → Plan → Code → Test → Commit', maxStep: 4, component: Slide16 },
   { number: 17, title: 'Instructions：这个项目有什么规矩？', maxStep: 3, component: Slide17 },
   { number: 18, title: 'Skills：把经验封装成能力', maxStep: 4, component: Slide18 },
   { number: 19, title: '真实案例：project-continuity', maxStep: 5, component: Slide19 },

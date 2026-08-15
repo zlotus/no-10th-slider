@@ -17,6 +17,17 @@ export function Slide04({ step }: SlideProps) {
       </motion.div>}</AnimatePresence>
     </div>
     <AnimatePresence>{step >= 2 && <motion.div className="decision-contrast" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 14 }}><div><span>Model 判断</span><code>“应该运行 npm test”</code></div><b>≠</b><div className="real-execution"><span><X /> 尚未发生</span><code>电脑真的运行 npm test</code></div></motion.div>}</AnimatePresence>
-    <motion.div className="model-takeaway" animate={{ opacity: step >= 3 ? 1 : 0 }}>Model 负责<strong>“决定”</strong>，不负责<strong>“执行”</strong>。</motion.div>
+    <AnimatePresence>
+  {step >= 3 && (
+    <motion.div
+      className="model-takeaway"
+      initial={{ opacity: 0, y: 14 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 14 }}
+    >
+      Model 负责<strong>“决定”</strong>，不负责<strong>“执行”</strong>。
+    </motion.div>
+  )}
+</AnimatePresence>
   </Slide>
 }

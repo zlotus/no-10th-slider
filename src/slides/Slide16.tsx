@@ -18,14 +18,14 @@ export function Slide16({ step }: SlideProps) {
     <div className="workflow-summary">
       <header><span>上层过程</span><b>WORKFLOW</b><small>我们看到的任务阶段</small></header>
       <div className="workflow-row">
-        {workflow.map(({ name, detail, icon: Icon }, index) => <motion.article key={name} className={`${index <= step ? 'visible' : ''} ${index === 3 ? 'feedback' : ''}`} animate={{ opacity: index <= step ? 1 : .13, y: index <= step ? 0 : 14 }}>
+        {workflow.map(({ name, detail, icon: Icon }, index) => <motion.article key={name} className={`${index <= step ? 'visible' : ''} ${index === 3 ? 'feedback' : ''}`} initial={{ opacity: 0 }} animate={{ opacity: index <= step ? 1 : .13, y: index <= step ? 0 : 14 }}>
           <i><Icon /></i><span>{String(index + 1).padStart(2, '0')}</span><b>{name}</b><small>{detail}</small>{index < workflow.length - 1 && <em>→</em>}
         </motion.article>)}
       </div>
     </div>
-    <motion.div className="engine-divider" animate={{ opacity: step >= 5 ? 1 : .25 }}><i /><span><Wrench />同一台发动机，驱动每一个阶段</span><i /></motion.div>
-    <div className={`workflow-engine ${step >= 5 ? 'revealed' : ''}`}>
-      <AgentLoop compact active={step >= 5 ? 4 : Math.min(step, 4)} />
+    <motion.div className="engine-divider" initial={{ opacity: 0 }} animate={{ opacity: step >= 0 ? 1 : .25 }}><i /><span><Wrench />同一台发动机，驱动每一个阶段</span><i /></motion.div>
+    <div className={`workflow-engine ${step >= 0 ? 'revealed' : ''}`}>
+      <AgentLoop compact active={step >= 4 ? 4 : Math.min(step, 4)} />
       <div className="engine-copy">
         <span>底层机制</span>
         <h2>Reason <i>→</i> Tool Use <i>→</i> Tool Result <i>→</i> Reason…</h2>

@@ -22,6 +22,15 @@ export function Slide05({ step }: SlideProps) {
       <ModelNode />
     </div>
     <div className="context-takeaway">模型不是“永久记得项目”，<strong>而是这些信息仍在当前 Context 中。</strong></div>
-    <AnimatePresence>{step >= 6 && <motion.div className="context-limit" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}><i />Context 并不是无限的</motion.div>}</AnimatePresence>
+    <AnimatePresence>{step >= 6 && <motion.div
+  className="context-limit"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+>
+  <i />
+  Context 并不是无限的
+  <i />
+</motion.div>}</AnimatePresence>
   </Slide>
 }

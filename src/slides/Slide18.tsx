@@ -37,7 +37,7 @@ export function Slide18({ step }: SlideProps) {
         <footer className={step >= 4 ? 'visible' : ''}>完整方法进入当前 Context</footer>
       </section>
     </div>
-    <div className={`skill-takeaway ${step >= 4 ? 'visible' : ''}`}><span>反复解释的方法论</span><i>→</i><strong>可发现、可加载、可复用的项目资产</strong></div>
+    <div className={`skill-takeaway ${step >= 4 ? 'visible' : ''}`}><span>反复解释的方法论</span><i>→</i><strong>可发现、可加载、可复用的 个人/团队 独特项目资产</strong></div>
     <CapabilityRail active={1} />
   </Slide>
 }

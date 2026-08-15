@@ -32,12 +32,12 @@ export function Slide13({ step }: SlideProps) {
       </div>
       <section className="structured-plan">
         <header><ListChecks /><div><span>IMPLEMENTATION PLAN</span><strong>登录功能</strong></div><small>{Math.min(step * 2, 6)} / 6</small></header>
-        <div>{plan.map(([number, label], index) => <motion.article key={number} animate={{ opacity: index < step * 2 ? 1 : .1, x: index < step * 2 ? 0 : 16 }}>
+        <div>{plan.map(([number, label], index) => <motion.article key={number} initial={{ opacity: 0, y: 10 }} animate={{ opacity: index < step * 2 ? 1 : .1, x: index < step * 2 ? 0 : 16 }}>
           <span>{number}</span><b>{label}</b>{index === 2 && <ShieldCheck />}
         </motion.article>)}</div>
       </section>
     </div>
-    <motion.p className="plan-principle" animate={{ opacity: step >= 3 ? 1 : .28 }}><b>先降低不确定性</b><i>→</i><b>再制定计划</b><i>→</i><strong>最后执行</strong></motion.p>
+    <motion.p className="plan-principle" initial={{ opacity: 0 }} animate={{ opacity: step >= 3 ? 1 : .28 }}><b>先降低不确定性</b><i>→</i><b>再制定计划</b><i>→</i><strong>最后执行</strong></motion.p>
     <StoryRail active={2} completed={step >= 3 ? 3 : 2} />
   </Slide>
 }

@@ -16,7 +16,7 @@ export function Slide17({ step }: SlideProps) {
   return <Slide number="17" eyebrow="SYSTEM EXTENSION · INSTRUCTIONS" title="Instructions：这个项目有什么规矩？" className="slide-17">
     <div className="instructions-stage">
       <section className="instruction-file">
-        <header><i /><i /><i /><span>AGENTS.md</span><b>PROJECT RULES</b></header>
+        <header><i /><i /><i /><span>CLAUDE.md / AGENTS.md</span><b>PROJECT RULES</b></header>
         <div className="instruction-lines">
           <small># 在这个项目里工作时</small>
           {rules.map(([rule, Icon], index) => <article key={rule} className={step >= Math.min(index, 2) ? 'visible' : ''}><span>{String(index + 1).padStart(2, '0')}</span><Icon /><b>{rule}</b></article>)}
@@ -25,7 +25,7 @@ export function Slide17({ step }: SlideProps) {
       </section>
 
       <section className="instruction-pipeline">
-        <div className="instruction-source"><ScrollText /><span>AGENTS.md</span><small>项目规则</small></div>
+        <div className="instruction-source"><ScrollText /><span>CLAUDE.md<br/>AGENTS.md</span><small>项目规则</small></div>
         <div className={`instruction-arrow ${step >= 1 ? 'active' : ''}`}><span>加入当前调用</span><i>↓</i></div>
         <div className={`instruction-context ${step >= 1 ? 'active' : ''}`}><ContextNode /><small>Instructions 成为 Context 的一部分</small></div>
         <div className={`instruction-arrow ${step >= 2 ? 'active' : ''}`}><span>每轮读取</span><i>↓</i></div>

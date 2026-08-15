@@ -23,13 +23,13 @@ export function Slide09({ step }: SlideProps) {
       {round.map(([label, caption, example], index) => {
         const Icon = icons[index]
         const visible = step >= index || step >= 3
-        return <motion.article key={`${label}-${round === secondRound ? 2 : 1}`} className={`mental-node mental-${label.toLowerCase()} ${visible ? 'visible' : ''}`} animate={{ opacity: visible ? 1 : .16, scale: visible ? 1 : .97 }}>
+        return <motion.article key={`${label}-${round === secondRound ? 2 : 1}`} className={`mental-node mental-${label.toLowerCase()} ${visible ? 'visible' : ''}`} initial={{ opacity: visible ? 1 : .16, scale: visible ? 1 : .97 }} animate={{ opacity: visible ? 1 : .16, scale: visible ? 1 : .97 }}>
           <Icon /><span><b>{label}</b><small>{caption}</small></span><code>{example}</code>
         </motion.article>
       })}
       <div className={`repeat-node ${step >= 3 ? 'visible' : ''}`}><RefreshCw /><span>下一轮</span></div>
       <div className="round-indicator"><span>ROUND</span><b>{step >= 3 ? '02' : '01'}</b></div>
     </div>
-    <motion.div className="autonomy-takeaway" animate={{ opacity: step >= 4 ? 1 : 0 }}>Agent 的“自主性”，<strong>很大程度来自持续的反馈循环。</strong></motion.div>
+    <motion.div className="autonomy-takeaway" initial={{ opacity: 0 }} animate={{ opacity: step >= 4 ? 1 : 0 }}>Agent 的“自主性”，<strong>很大程度来自持续的反馈循环。</strong></motion.div>
   </Slide>
 }

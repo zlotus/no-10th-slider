@@ -21,7 +21,7 @@ const labels = [
 
 export function Slide15({ step }: SlideProps) {
   const passed = step >= 7
-  return <Slide number="15" eyebrow="FEEDBACK LOOP · HERO" title="测试失败，其实只是新的 Observation" className="slide-15">
+  return <Slide number="15" eyebrow="FEEDBACK LOOP · ITERATION" title="测试失败，其实只是新的 Observation" className="slide-15">
     <div className={`feedback-stage ${passed ? 'resolved' : ''}`}>
       <svg className="feedback-path" viewBox="0 0 1570 610" aria-hidden="true">
         <path className={step >= 1 ? 'active request' : ''} d="M350 110 C480 110 500 126 600 126" />
@@ -52,9 +52,9 @@ export function Slide15({ step }: SlideProps) {
 
       <section className="feedback-fix">
         <span>04 · ACT AGAIN</span>
-        <motion.article animate={{ opacity: step >= 4 ? 1 : .12, y: step >= 4 ? 0 : 12 }}><Eye /><div><b>read_file</b><code>src/auth.ts</code></div><small>读取</small></motion.article>
-        <motion.article animate={{ opacity: step >= 5 ? 1 : .12, y: step >= 5 ? 0 : 12 }}><FileEdit /><div><b>edit_file</b><code>expiresAt &gt; Date.now()</code></div><small>修改</small></motion.article>
-        <motion.div className="retest-chip" animate={{ opacity: step >= 6 ? 1 : .12 }}><RefreshCw /><b>bash</b><code>npm test</code></motion.div>
+        <motion.article initial={{ opacity: 0 }} animate={{ opacity: step >= 4 ? 1 : .12, y: step >= 4 ? 0 : 12 }}><Eye /><div><b>read_file</b><code>src/auth.ts</code></div><small>读取</small></motion.article>
+        <motion.article initial={{ opacity: 0 }} animate={{ opacity: step >= 5 ? 1 : .12, y: step >= 5 ? 0 : 12 }}><FileEdit /><div><b>edit_file</b><code>expiresAt &gt; Date.now()</code></div><small>修改</small></motion.article>
+        <motion.div className="retest-chip" initial={{ opacity: 0 }} animate={{ opacity: step >= 6 ? 1 : .12 }}><RefreshCw /><b>bash</b><code>npm test</code></motion.div>
       </section>
 
       <div className={`feedback-contrast ${step >= 8 ? 'visible' : ''}`}>

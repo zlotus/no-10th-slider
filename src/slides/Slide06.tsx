@@ -16,9 +16,26 @@ export function Slide06({ step }: SlideProps) {
       <div className={`tool-interface ${step >= 1 ? 'connected' : ''}`}><span>结构化 Tool Interface</span><i /></div>
       <HarnessNode className="tools-harness"><div className="tool-grid">{tools.map(([Icon, label, signature], index) => {
         const threshold = index < 2 ? 1 : index < 4 ? 2 : 3
-        return <motion.div key={label} animate={{ opacity: step >= threshold ? 1 : .18, y: step >= threshold ? 0 : 10 }}><ToolNode icon={Icon} label={label} caption={signature} /></motion.div>
+        return (
+  <motion.div
+    key={label}
+    initial={{ opacity: .18, y: 10 }}
+    animate={{
+      opacity: step >= threshold ? 1 : .18,
+      y: step >= threshold ? 0 : 10
+    }}
+  >
+    <ToolNode icon={Icon} label={label} caption={signature} />
+  </motion.div>
+)
       })}</div></HarnessNode>
     </div>
-    <motion.div className="tools-takeaway" animate={{ opacity: step >= 3 ? 1 : 0 }}>Tool 是 Model 可以<strong>请求调用</strong>的结构化能力。</motion.div>
+    <motion.div
+  className="tools-takeaway"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: step >= 3 ? 1 : 0 }}
+>
+  Tool 是 Model 可以<strong>请求调用</strong>的结构化能力。
+</motion.div>
   </Slide>
 }

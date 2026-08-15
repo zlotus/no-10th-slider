@@ -22,7 +22,7 @@ export function Slide11({ step }: SlideProps) {
           <footer><Paperclip /><span>AGENTS.md</span><button aria-label="发送任务"><ArrowUp /></button></footer>
         </div>
       </motion.div>
-      <motion.div className="task-accepted" animate={{ opacity: step >= 1 ? 1 : 0, y: step >= 1 ? 0 : 8 }}>
+      <motion.div className="task-accepted" initial={{ opacity: 0 }} animate={{ opacity: step >= 1 ? 1 : 0, y: step >= 1 ? 0 : 8 }}>
         <i />目标进入 Context <span>接下来，Agent 先了解这个项目</span>
       </motion.div>
     </div>
